@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SociaNova — Create account</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="auth-page">
+
+  <div class="auth-card">
+    <div class="auth-logo">
+      <div class="logo-mark">SN</div>
+      <span class="logo-name">SociaNova</span>
+    </div>
+
+    <h1 class="auth-title">Create your account</h1>
+    <p class="auth-sub">Join SociaNova and start sharing.</p>
+
+    <p class="form-error" id="form-error"></p>
+
+    <form id="register-form" novalidate>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          id="username"
+          name="username"
+          type="text"
+          placeholder="yourhandle"
+          autocomplete="username"
+          required
+          minlength="3"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="you@example.com"
+          autocomplete="email"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password <small style="font-weight:400;text-transform:none;letter-spacing:0">(min 6 chars)</small></label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="••••••••"
+          autocomplete="new-password"
+          required
+          minlength="6"
+        />
+      </div>
+
+      <button class="btn-primary" type="submit">Create account</button>
+    </form>
+
+    <p class="auth-footer">
+      Already have an account? <a href="index.html">Sign in</a>
+    </p>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script>initRegisterPage();</script>
+</body>
+</html>

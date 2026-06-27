@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SociaNova — Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="feed-page">
+
+    <nav class="topnav">
+        <div class="nav-brand">
+            <a href="search.html" class="nav-back" aria-label="Back to Search">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M12 4L6 10l6 6" />
+                </svg>
+            </a>
+            <span class="topnav-title" id="profile-nav-username">Profile</span>
+        </div>
+        <div class="nav-right">
+            <button class="btn-logout" id="btn-logout">Sign out</button>
+        </div>
+    </nav>
+
+    <main class="feed-container">
+
+        <!-- Profile header card -->
+        <section id="profileHeader" class="profile-header-card">
+            <div class="profile-loading">Loading profile…</div>
+        </section>
+
+        <!-- Posts -->
+        <div class="profile-posts-header">
+            <h3 class="profile-posts-title">Posts</h3>
+        </div>
+
+        <section id="profilePosts" class="profile-posts">
+            <div class="profile-loading">Loading posts…</div>
+        </section>
+
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
+
+</body>
+
+</html>

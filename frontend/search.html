@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SociaNova — Search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="feed-page" onload="initSearchPage()">
+
+    <nav class="topnav">
+        <div class="nav-brand">
+            <a href="feed.html" class="nav-back" aria-label="Back to Feed">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M12 4L6 10l6 6" />
+                </svg>
+            </a>
+            <span class="topnav-title">Search Users</span>
+        </div>
+        <div class="nav-right">
+            <button class="btn-logout" id="btn-logout">Sign out</button>
+        </div>
+    </nav>
+
+    <main class="feed-container">
+
+        <div class="search-bar-wrap">
+            <div class="search-icon-wrap">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="9" cy="9" r="5.5" />
+                    <path d="M13.5 13.5L17 17" />
+                </svg>
+            </div>
+            <input id="searchInput" class="search-input" type="text" placeholder="Search by username…"
+                autocomplete="off" />
+        </div>
+
+        <div id="searchResults" class="search-results"></div>
+
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/search.js"></script>
+
+</body>
+
+</html>

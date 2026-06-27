@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SociaNova — Sign in</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="auth-page">
+
+  <div class="auth-card">
+    <div class="auth-logo">
+      <div class="logo-mark">SN</div>
+      <span class="logo-name">SociaNova</span>
+    </div>
+
+    <h1 class="auth-title">Welcome back</h1>
+    <p class="auth-sub">Sign in to continue to your feed.</p>
+
+    <p class="form-success" id="registered-msg"></p>
+    <p class="form-error" id="form-error"></p>
+
+    <form id="login-form" novalidate>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="you@example.com"
+          autocomplete="email"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="••••••••"
+          autocomplete="current-password"
+          required
+        />
+      </div>
+
+      <button class="btn-primary" type="submit">Sign in</button>
+    </form>
+
+    <p class="auth-footer">
+      Don't have an account? <a href="register.html">Create one</a>
+    </p>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // Show "registered" banner if redirected from register page
+    const params = new URLSearchParams(location.search);
+    if (params.get("registered")) {
+      document.getElementById("registered-msg").textContent =
+        "Account created! Sign in to get started.";
+    }
+    initLoginPage();
+  </script>
+</body>
+</html>
