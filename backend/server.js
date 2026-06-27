@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const path = require("path");
 const connectDB = require("./config/db");
 
 dotenv.config();
@@ -17,9 +18,6 @@ const postRoutes = require("./routes/postRoutes");
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 
-app.get("/", (req, res) => {
-    res.send("Social Media API Running...");
-});
 
 app.get("/api/test", (req, res) => {
     res.json({
@@ -32,6 +30,13 @@ app.get("/health", (req, res) => {
     res.status(200).json({
         status: "ok"
     });
+});
+
+// Serve frontend
+app.use(express.static(path.join(__dirname, "../frontend")));
+
+app.get(/^\/(?!api).*/, (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/index.html"));
 });
 
 const PORT = process.env.PORT || 5000;
